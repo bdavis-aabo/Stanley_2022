@@ -1,0 +1,47 @@
+.contact-form { margin-bottom: 3vh;
+	.form-group { margin-bottom: 0;
+		.form-control { border-radius: 0; box-shadow: none; background: $dkblue; border-color: $white; margin-bottom: 15px;
+			color: $white; text-transform: uppercase; font-size: 15px; padding: 12px 8px;
+			&::placeholder { color: $white; opacity: 1; }
+		}
+		.one-full {
+			.outline-btn { border: 1px solid $white; padding: 12px 8px; }
+		}
+	}
+}
+
+/*** SMALL DEVICES : Landscape phones, 576px + ***/
+@media (min-width: 576px){
+
+}
+
+/*** IPHONE X : Landscape ***/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/*** MEDIUM DEVICES : Tablets, 768px + ***/
+@media (min-width: 768px){
+	.contact-form {
+		.form-group { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+			.one-half { flex-basis: 50%; }
+			.one-full { flex-basis: 100%; flex-grow: 1; }
+			.form-control { margin-bottom: 0; }
+		}
+	}
+}
+
+/*** LARGE DEVICES : Desktops, 992px and up ***/
+@media (min-width: 992px){
+
+}
+
+/*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
+@media (min-width: 1200px){
+
+}
+
+/*
+:::::::::: CUSTOM MEDIA QUERIES IF NEEDED ::::::::::
+*/

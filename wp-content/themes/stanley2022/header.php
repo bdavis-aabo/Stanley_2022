@@ -23,3 +23,30 @@
   <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
+
+	<header class="header">
+		<section class="header-top">
+			<a href="<?php bloginfo('url') ?>" title="<?php bloginfo('name') ?>" class="brand-logo">
+				<img src="<?php bloginfo('template_directory') ?>/assets/images/stanley-color_logo.svg" alt="<?php bloginfo('name') ?> - logo" class="img-fluid" />
+			</a>
+			<button class="nav-btn" type="button">
+        <span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+        <span class="nav-iconbar"></span>
+      </button>
+		</section>
+		<section class="header-bottom gray-bg">
+			<div class="navigation-container">
+				<?php wp_nav_menu(array(
+          'menu'            =>  'main-menu',
+          'depth'           =>  2,
+          'container'       =>  '',
+          'container_class' =>  '',
+          'container_id'    =>  'main-navbar',
+          'menu_class'      =>  'navbar-nav',
+        ));
+        ?>
+			</div>
+		</section>
+	</header>

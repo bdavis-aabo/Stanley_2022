@@ -1,0 +1,120 @@
+/*
+	design.scss
+	- colors
+	- fonts
+	- buttons
+	- base styles
+*/
+
+// COLORS
+$white:		#fff;
+$black:		#000;
+$gray:		#54565a;
+$ltgray:	#c8c8c8;
+$ltblue:	#0a7dad;
+$blue: 		#007298;
+$dkblue:	#1c1f2a;
+$red:			#ff4438;
+
+.gray-bg   { color: $white; background: $gray; }
+.dkblue-bg { color: $white; background: $dkblue; }
+
+.dkgray-txt { color: $gray; }
+.black-txt  { color: $black; }
+.red-txt 	  { color: $red; }
+
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+$openSans: 	'Open Sans', sans-serif;
+$bebas:			'Bebas Neue', sans-serif;
+
+body { font-family: $openSans; font-weight: 400; font-size: 15px; line-height: 30px;
+	a { text-decoration: none; transition: all 666ms ease-in-out; }
+}
+.carousel-control-next,
+.carousel-control-prev { opacity: 1; font-size: 24px; width: 10%; text-shadow: 0 0 5px rgba($black,.5); }
+.carousel-control-prev { justify-content: flex-start; padding-left: 2.5%; }
+.carousel-control-next { justify-content: flex-end; padding-right: 2.5%; }
+
+@supports(-webkit-text-stroke: 1px black){
+	#homepageHeroSlider {
+		h2 {
+			-webkit-text-stroke: 1px $red; -webkit-text-fill-color: $dkblue;
+		}
+	}
+}
+
+// BUTTONS
+.btn { border-radius: 0; border: none; box-shadow: none; text-transform: uppercase; font-size: 15px;
+	&.white-btn { color: $white !important; }
+	&.arrow-btn { color: $black; padding-left: 0;
+		svg { margin-left: 12px; }
+	}
+	&.blank-btn { padding-left: 0;
+		svg { margin-left: 12px; }
+	}
+	&.up-arrow { position: absolute; right: 10px; top: -25px; padding: 0;
+		img { width: 64px; }
+	}
+	&.outline-btn { border: 1px solid $black; padding: 10px 12px;
+		svg { margin-left: 12px; }
+	}
+}
+.down-arrow { position: absolute; right: 10px; bottom: -28px; z-index: 1; width: 64px; }
+
+@keyframes animateLeft {
+	0% { transform: translateX(0%); opacity: 0; }
+	5% { opacity: 1; }
+	100% { transform: translateX(-100%); }
+}
+@keyframes animateRight {
+	0% { transform: translateX(0%); opacity: 0; }
+	5% { opacity: 1; }
+	100% { transform: translateX(100%); }
+}
+
+
+
+// BASE STYLES
+
+
+/*** SMALL DEVICES : Landscape phones, 576px + ***/
+@media (min-width: 576px){
+
+}
+
+/*** IPHONE X : Landscape ***/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/*** MEDIUM DEVICES : Tablets, 768px + ***/
+@media (min-width: 768px){
+	.btn {
+		&.up-arrow { right: 30px; }
+	}
+	.down-arrow { right: 30px; }
+
+	@supports(-webkit-text-stroke: 1px black){
+		#homepageHeroSlider {
+			h2 {
+				-webkit-text-stroke: 1.25px $red; -webkit-text-fill-color: $dkblue;
+			}
+		}
+	}
+}
+
+/*** LARGE DEVICES : Desktops, 992px and up ***/
+@media (min-width: 992px){
+	.btn { font-size: 17px; }
+}
+
+/*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
+@media (min-width: 1200px){
+
+}
+
+/*
+:::::::::: CUSTOM MEDIA QUERIES IF NEEDED ::::::::::
+*/

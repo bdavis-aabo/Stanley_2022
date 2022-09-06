@@ -1,0 +1,68 @@
+// NAV BUTTON
+.nav-btn { background: transparent; border: none; border-radius: 0; cursor: pointer; z-index: 101;
+  width: 30px; height: 30px; transform: translateY(0) rotate(0deg); transition: transform 666ms ease-in-out;
+  &:focus { outline: 0; }
+  .nav-iconbar { display: block; position: absolute; height: 1px; width: 100%; background: $dkblue; box-shado: 0 0 2px rgba($black,.3); opacity: 1; left: 0; top: 0;
+    transform: rotate(0deg); transition: 0.25s ease-in-out;
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2),
+    &:nth-child(3) { top: 9px; }
+    &:nth-child(4) { top: 18px; }
+  }
+  &.open {
+    .nav-iconbar {
+      &:nth-child(1) { top: 12px; opacity: 0; }
+      &:nth-child(2) { transform: rotate(-45deg); transition-delay: .3s; }
+      &:nth-child(3) { transform: rotate(45deg); transition-delay: .3s; }
+      &:nth-child(4) { top: 12px; opacity: 0; }
+    }
+  }
+}
+
+.navbar-nav { margin: 1vh 0; padding: 0; text-align: center;
+	.menu-item { padding: 5px 0; text-transform: uppercase; font-size: 15px; letter-spacing: 1px;
+		a { color: $white;
+			&:hover { color: #1eabd5; }
+		}
+		&.current-menu-item {
+			a { color: #1eabd5; }
+		}
+	}
+}
+
+/*** SMALL DEVICES : Landscape phones, 576px + ***/
+@media (min-width: 576px){
+
+}
+
+/*** IPHONE X : Landscape ***/
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/*** MEDIUM DEVICES : Tablets, 768px + ***/
+@media (min-width: 768px){
+	.nav-btn { display: none; }
+
+	.navbar-nav { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; flex-direction: row; flex-basis: 75%;
+		margin: .3vh 0;
+		.menu-item { display: inline-flex; padding: 4px 18px; }
+	}
+}
+
+/*** LARGE DEVICES : Desktops, 992px and up ***/
+@media (min-width: 992px){
+	.navbar-nav { flex-basis: 80%;
+		.menu-item { padding: 4px 30px; }
+	}
+}
+
+/*** EXTRA LARGE DEVICES : Large Desktops, 1200px + ***/
+@media (min-width: 1200px){
+
+}
+
+/*
+:::::::::: CUSTOM MEDIA QUERIES IF NEEDED ::::::::::
+*/
